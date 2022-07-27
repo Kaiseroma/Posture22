@@ -32,7 +32,7 @@ procedure, it is easy to do this (will be shown later).
 
 At line 149 of main.py, there is a flag called "train". By default it is set to False, which enables just monitor regime (that is, you are just using the developed
 software as is). If set to True, the flag enables to train the posture classifier. You will have to design your calibration procedure by yourself, but this procedure
-shall be constrained to the parameter "calibration_period_seconds" set at line 150 (default preset is 1200). This parameter defines the time, during which the end user
+shall be constrained to the parameter "calibration_period_seconds" set at line 150 (default preset is 600). This parameter defines the time, during which the end user
 will have to slouch during the recalibration process. After slouching for calibration_period_seconds period, the end user will also have to stand straight in different
 possible poses for the same period. After standing straight for calibration_period_seconds period, the software enters the just monitor regime, but using a new posture
 classifier.

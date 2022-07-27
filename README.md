@@ -60,3 +60,16 @@ model can understand that not every single inclination is necessarily a slouch.
 (in space, this will equal 1.6m distance from camera).
 10. Turn 180 degrees. Beginning from the distance 1.6m, each 10 seconds take steps right, until the timer shows 1200 seconds (in space, this will equal 0.9m 
 distance from camera). Calibration finished! This one takes 20 minutes, so don't forget to set train=False next time you use the software.
+
+# Comments
+There is still a lot to improve though. For instance, end user can see some bugs when testing the software for front-view neck inclination detection precision (yes,
+sometimes it does not show slouch when there is one). The main issue here is calibration procedure. If one does the calibration strictly according to the rules above, 
+there can be the following problem: the precision of the algorithm might significantly decrease on distances other than 0.9, 0.95, 1, 1.05m etc. What the author
+actually did, is the smooth motion in given interval of distances (somehow still sticking to strict rules though). This smoothes the precision distribution over
+distance from camera, however, this also implies loss of quantity of training samples per each distance point, which might sometimes lead to bugs. To solve this,
+one might think of increasing the time for each calibration step, however, the overall precision might therefore not increase, because of the human factor: if a 
+person, who does the calibration, gets tired - this might actually have a bad impact on the work of the software. Also, because of the human factor, there can be a 
+disbalance between the estimation results for right and left inclination from the front view, or disbalance between the results for left-side and right-side views. 
+Some of these disbalances can be experienced by the end user right now as well, but, as the author said before, there is always a lot to improve!
+
+P.S. The winner model is RandomForestClassifier with score over 0.99 on the test subset:)

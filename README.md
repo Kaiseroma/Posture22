@@ -40,23 +40,23 @@ classifier.
 # The calibration procedure provided by author of the project
 
 1. Start some timer. We will start calibration from the front view.
-2. Inclinate the neck to the left significantly. Beginning from the distance of 1m, each 5 seconds step back for ~5cm, until the timer shows 75 seconds (in space, this
-will equal 1.7m distance from camera).
-3. Inclinate the neck to the right significantly. Beginning from the distance of 1.7m, each 5 seconds step forward for ~5cm, until the timer shows 150 seconds (in
-space, this will equal 1m distance from camera).
-4. Inclinate the shoulders to the left significantly. Beginning from the distance of 1m, each 5 seconds step back for ~5cm, until the timer shows 225 seconds (in
-space, this will equal 1.7m distance from camera).
-5. Inclinate the shoulders to the right significantly. Beginning from the distance of 1.7m, each 5 seconds step forward for ~5cm, until the timer shows 300 seconds (in
-space, this will equal 1m distance from camera).
+2. Inclinate the neck to the left significantly. Beginning from the distance of 0.9m, each 5 seconds step back for ~5cm, until timer shows 75 seconds (in space, this
+will equal 1.6m distance from camera).
+3. Inclinate the neck to the right significantly. Beginning from the distance of 1.6m, each 5 seconds step forward for ~5cm, until timer shows 150 seconds (in
+space, this will equal 0.9m distance from camera).
+4. Inclinate the shoulders to the left significantly. Beginning from the distance of 0.9m, each 5 seconds step back for ~5cm, until timer shows 225 seconds (in
+space, this will equal 1.6m distance from camera).
+5. Inclinate the shoulders to the right significantly. Beginning from the distance of 1.6m, each 5 seconds step forward for ~5cm, until timer shows 300 seconds (in
+space, this will equal 0.9m distance from camera).
 6. Now we move to the side view. Turn 90 degrees right. Start slouching in different ways (using only head, or also shoulders, or even your whole back) significantly.
-Beginning from the distance 1m, each 10 seconds take steps right, until the timer shows 450 seconds (in space, this will equal 1.7m distance from camera).
-7. Turn 180 degrees. Slouch in different ways significantly. Beginning from the distance 1.7m, each 10 seconds take steps right, until the timer shows 600 seconds (in
-space, this will equal 1m distance from camera).
+Beginning from the distance 0.9m, each 10 seconds take steps right, until timer shows 450 seconds (in space, this will equal 1.6m distance from camera).
+7. Turn 180 degrees. Slouch in different ways significantly. Beginning from the distance 1.6m, each 10 seconds take steps right, until timer shows 600 seconds (in
+space, this will equal 0.9m distance from camera).
 8. After you see the command from Python console to stand straight, start standing straight. For first 5 minutes, stay in front view. Each 10 seconds step back for
-~5cm, until the timer shows 750 seconds (in space, this will equal 1.7m distance from camera). Then start stepping forward for ~5cm each 10 seconds, until the timer
-shows 900 seconds (in space, this will equal 1m distance from camera). Here, the author also introduced small inclinations while standing in normal way, so that the
+~5cm, until the timer shows 750 seconds (in space, this will equal 1.6m distance from camera). Then start stepping forward for ~5cm each 10 seconds, until timer
+shows 900 seconds (in space, this will equal 0.9m distance from camera). Here, the author also introduced small inclinations while standing in normal way, so that the
 model can understand that not every single inclination is necessarily a slouch.
-9. Turn 90 degrees right. Make sure you are standing straight. Beginning from the distance 1m, each 10 seconds take steps right, until the timer shows 1050 seconds 
-(in space, this will equal 1.7m distance from camera).
-10. Turn 180 degrees. Beginning from the distance 1.7m, each 10 seconds take steps right, until the timer shows 1200 seconds (in space, this will equal 1m 
+9. Turn 90 degrees right. Make sure you are standing straight. Beginning from the distance 0.9m, each 10 seconds take steps right, until timer shows 1050 seconds 
+(in space, this will equal 1.6m distance from camera).
+10. Turn 180 degrees. Beginning from the distance 1.6m, each 10 seconds take steps right, until the timer shows 1200 seconds (in space, this will equal 0.9m 
 distance from camera). Calibration finished! This one takes 20 minutes, so don't forget to set train=False next time you use the software.

@@ -25,7 +25,7 @@ procedure, it is easy to do this (will be shown later).
 2. Open the files as a project in your favorite code editor (in the case of the author, it is Spyder).
 3. Before launching the application, make sure you have all the dependencies installed (that is, all necessary libraries).
 4. Launch file main.py.
-5. Stand tall at some distance between 1 and 1.5m from your laptop.
+5. Stand tall at some distance between 0.9 and 1.6m from your laptop.
 6. See how good or bad your posture is!
 
 # How to change the calibration procedure

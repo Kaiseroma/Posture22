@@ -7,7 +7,7 @@ This repository contains Posture22 project. Its aim is to detect whether the pos
 The code utilizes the PC (laptop) embedded camera as the information acquisition source.
 The algorithm used in this project is designed to detect a posture of a person STANDING at various distances from the camera.
 
-It can define different types of posture breaches, such as:
+It can detect different types of posture breaches, such as:
 - neck inclination from front view;
 - torso inclination from front view;
 - neck and torso inclination from side view.

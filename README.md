@@ -14,10 +14,31 @@ It can detect different types of posture breaches, such as:
 
 The algorithm DOES NOT WORK if the person's shoulders are not present in camera view, as the presence and position of person is detected by shoulders.
 
-The algorithm is based on MediaPipe Pose, which is an ML solution for high-fidelity body pose tracking.
-
 The solution proposed by the author of this project is itself a trainable posture classifier. If the end user wants to adjust (improve) the embedded calibration
 procedure, it is easy to do this (will be shown later).
+
+# Methodologies
+
+The algorithm is based on MediaPipe Pose, which is an ML solution for high-fidelity body pose tracking, inferring 33 3D landmarks and background segmentation mask on
+the whole body from RGB video frames. Digging more deeply, the solution utilizes a two-step detector-tracker ML pipeline. Using a detector, the pipeline first locates 
+the person/pose region-of-interest (ROI) within the frame. The tracker subsequently predicts the pose landmarks and segmentation mask within the ROI using the ROI-
+cropped frame as input. For video use cases, the detector is invoked only as needed, i.e., for the very first frame and when the tracker could no longer 
+identify body pose presence in the previous frame. For other frames the pipeline simply derives the ROI from the previous frame’s pose landmarks.
+As it was stated before, the landmark model in MediaPipe Pose predicts the location of 33 pose landmarks (see figure below).
+
+![image](https://user-images.githubusercontent.com/60993883/187292141-de64900c-0465-4dca-b3a8-16411db9e7e5.png)
+
+With that, the file called PoseModule.py was built based on the source code provided by the developers of MediaPipe Pose.
+
+In the project, the points with numbers 0, 7, 8, 9, 11, 12, 23 and 24 are used to derive the prediction of the human object's posture. Among these, points 11 and 12
+are used for the object detection as well.
+
+In file main.py it can clearly be seen that the code works in the following way: during the calibration procedure, the algorithm gathers the data standing for the
+positions of the landmarks, labeling the first part as "slouch", second as "straight" (which means that in this case we deal with binary classification problem).
+Then, data is being normalized and fed to three different types of classifiers, which are: RandomForestClassifier, GradientBoostingClassifier and XGBClassifier. 
+Accuracy test is then taken for all three classifiers, and the best model is then saved. As practice shows for now, winning model is actually RandomForestClassifier 
+with the standard parameters (of course, this is a field for improvement). The obtained classifier is then used to derive predictions about the posture in the
+monitoring regime.
 
 # How to launch
 
@@ -71,4 +92,3 @@ person, who does the calibration, gets tired - this might actually have a bad im
 disbalance between the estimation results for right and left inclination from the front view, or disbalance between the results for left-side and right-side views. 
 Some of these disbalances can be experienced by the end user right now as well, but, as the author said before, there is always a lot to improve!
 
-P.S. The winner model is RandomForestClassifier with score over 0.99 on the test subset:)
